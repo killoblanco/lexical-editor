@@ -1,8 +1,8 @@
-import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin"
 import { ChevronRightIcon, GithubIcon } from "lucide-react"
 import { Link } from "react-router"
-import { LexicalEditor } from "@/components/lexical/lexical"
-import { Toolbar } from "@/components/lexical/plugins/toolbar"
+import { LexicalEditor } from "@/components/lexical/editor"
+import { HistoryControls } from "@/components/lexical/toolbar/history-ctrl"
+import { Toolbar } from "@/components/lexical/toolbar/toolbar"
 import { Button } from "@/components/ui/button"
 
 export const LandingPage = () => {
@@ -23,10 +23,11 @@ export const LandingPage = () => {
           <span>Star on GitHub</span>
         </Button>
       </div>
-        <LexicalEditor classNames={{ placeholder: "top-15" }}>
-          <Toolbar />
-          <HistoryPlugin />
-        </LexicalEditor>
+      <LexicalEditor classNames={{ placeholder: "top-15" }}>
+        <Toolbar>
+          <HistoryControls />
+        </Toolbar>
+      </LexicalEditor>
       <div className="flex justify-end">
         <Button variant="outline" size="sm" asChild={true}>
           <Link to="/introduction">
