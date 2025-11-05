@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "acme",
-  "homepage": "https://acme.com",
+  "name": "wysiwyg-editor",
+  "homepage": "https://wysiwyg.kamilo.dev",
   "items": [
     {
       "name": "hello-world",
