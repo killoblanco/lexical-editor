@@ -1,22 +1,22 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "wysiwyg-editor",
-  "homepage": "https://wysiwyg.kamilo.dev",
+  "name": "lexical-editor",
+  "homepage": "https://lexical.kamilo.dev",
   "items": [
     {
-      "name": "wysiwyg",
+      "name": "lexical",
       "type": "registry:block",
-      "title": "WYSIWYG Editor",
-      "description": "A rich text WYSIWYG editor component.",
+      "title": "Lexical Editor",
+      "description": "A rich text editor component powered by Lexical.",
       "dependencies": ["lexical", "@lexical/react", "@lexical/utils"],
       "registryDependencies": ["button", "button-group"],
       "files": [
         {
-          "path": "src/components/wysiwyg/wysiwyg.tsx",
+          "path": "src/components/lexical/lexical.tsx",
           "type": "registry:component"
         },
         {
-          "path": "src/components/wysiwyg/plugins/toolbar.tsx",
+          "path": "src/components/lexical/plugins/toolbar.tsx",
           "type": "registry:component"
         }
       ]
