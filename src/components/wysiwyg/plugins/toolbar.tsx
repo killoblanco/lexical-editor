@@ -67,18 +67,18 @@ const TextFormatControls: FC<{
 
   return (
     <ButtonGroup>
-      <Button size="icon" variant={isBold ? "secondary" : "outline"} onClick={() => handleClick("bold")}>
+      <Button size="icon" variant={isBold ? "default" : "outline"} onClick={() => handleClick("bold")}>
         <BoldIcon />
       </Button>
-      <Button size="icon" variant={isItalic ? "secondary" : "outline"} onClick={() => handleClick("italic")}>
+      <Button size="icon" variant={isItalic ? "default" : "outline"} onClick={() => handleClick("italic")}>
         <ItalicIcon />
       </Button>
-      <Button size="icon" variant={isUnderline ? "secondary" : "outline"} onClick={() => handleClick("underline")}>
+      <Button size="icon" variant={isUnderline ? "default" : "outline"} onClick={() => handleClick("underline")}>
         <UnderlineIcon />
       </Button>
       <Button
         size="icon"
-        variant={isStrikethrough ? "secondary" : "outline"}
+        variant={isStrikethrough ? "default" : "outline"}
         onClick={() => handleClick("strikethrough")}
       >
         <StrikethroughIcon />
@@ -94,16 +94,16 @@ const TextAlignControls: FC<{ editor: LexicalEditor; format: ElementFormatType }
 
   return (
     <ButtonGroup>
-      <Button size="icon" variant={format === "left" ? "secondary" : "outline"} onClick={handleClick("left")}>
+      <Button size="icon" variant={format === "left" ? "default" : "outline"} onClick={handleClick("left")}>
         <AlignLeftIcon />
       </Button>
-      <Button size="icon" variant={format === "center" ? "secondary" : "outline"} onClick={handleClick("center")}>
+      <Button size="icon" variant={format === "center" ? "default" : "outline"} onClick={handleClick("center")}>
         <AlignCenterIcon />
       </Button>
-      <Button size="icon" variant={format === "right" ? "secondary" : "outline"} onClick={handleClick("right")}>
+      <Button size="icon" variant={format === "right" ? "default" : "outline"} onClick={handleClick("right")}>
         <AlignRightIcon />
       </Button>
-      <Button size="icon" variant={format === "justify" ? "secondary" : "outline"} onClick={handleClick("justify")}>
+      <Button size="icon" variant={format === "justify" ? "default" : "outline"} onClick={handleClick("justify")}>
         <AlignJustifyIcon />
       </Button>
     </ButtonGroup>
