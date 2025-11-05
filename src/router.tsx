@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router"
-import { PageLayout } from "@/components/layout"
+import { PageLayout } from "@/components/app/layout"
 import { LandingPage } from "@/pages/landing"
 import { IntroductionPage } from "./pages/introduction"
 
