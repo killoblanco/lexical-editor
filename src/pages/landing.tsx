@@ -1,6 +1,6 @@
+import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin"
 import { LexicalEditor } from "@/components/lexical/lexical"
 import { Toolbar } from "@/components/lexical/plugins/toolbar"
-import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin"
 
 export const LandingPage = () => {
   return (
