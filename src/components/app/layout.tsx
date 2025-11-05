@@ -1,6 +1,6 @@
 import { Outlet } from "react-router"
+import { SidebarProvider } from "@/components/ui/sidebar"
 import { AppSidebar } from "./sidebar"
-import { SidebarProvider } from "./ui/sidebar"
 
 export const PageLayout = () => {
   return (
