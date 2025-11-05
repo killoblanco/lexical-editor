@@ -17,6 +17,19 @@ const content = {
     { label: "Introduction", to: "/introduction" },
     { label: "Installation", to: "/installation" },
   ],
+  "Components ": [
+    { label: "Lexical Editor", to: "/installation" },
+    { label: "Toolbar", to: "/installation" },
+  ],
+  "Editor Controls": [
+    { label: "History Control", to: "/installation" },
+    { label: "Text Format Control", to: "/installation" },
+    { label: "Text Align Control", to: "/installation" },
+  ],
+  "Parsers ": [
+    { label: "Markdown Parser", to: "/installation" },
+    { label: "HTML Parser", to: "/installation" },
+  ],
 }
 
 export const AppSidebar = () => {
@@ -31,9 +44,9 @@ export const AppSidebar = () => {
         <h1 className="scroll-m-20 text-xl font-semibold tracking-tight">Lexical Editor</h1>
       </SidebarHeader>
       <SidebarContent>
-        <SidebarGroup className="p-4">
+        <SidebarGroup className="p-2">
           {Object.keys(content).map((groupTitle) => (
-            <SidebarGroup key={groupTitle} className="mb-6">
+            <SidebarGroup key={groupTitle} className="mb-4">
               <SidebarGroupLabel className="pb-4">{groupTitle}</SidebarGroupLabel>
               <SidebarGroupContent>
                 <SidebarMenu>
