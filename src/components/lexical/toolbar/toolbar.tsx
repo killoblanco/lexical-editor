@@ -6,16 +6,12 @@ import {
   $getSelection,
   $isElementNode,
   $isRangeSelection,
-  CAN_REDO_COMMAND,
-  CAN_UNDO_COMMAND,
   COMMAND_PRIORITY_LOW,
   type ElementFormatType,
   FORMAT_ELEMENT_COMMAND,
   FORMAT_TEXT_COMMAND,
   type LexicalEditor,
-  REDO_COMMAND,
   SELECTION_CHANGE_COMMAND,
-  UNDO_COMMAND,
 } from "lexical"
 import {
   AlignCenterIcon,
@@ -24,35 +20,12 @@ import {
   AlignRightIcon,
   BoldIcon,
   ItalicIcon,
-  RedoIcon,
   StrikethroughIcon,
   UnderlineIcon,
-  UndoIcon,
 } from "lucide-react"
-import { type FC, useCallback, useEffect, useRef, useState } from "react"
+import { type FC, type PropsWithChildren, useCallback, useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ButtonGroup } from "@/components/ui/button-group"
-
-const HistoryControls: FC<{ editor: LexicalEditor; canUndo: boolean; canRedo: boolean }> = ({
-  editor,
-  canUndo,
-  canRedo,
-}) => {
-  const handleClick = (command: typeof UNDO_COMMAND | typeof REDO_COMMAND) => {
-    editor.dispatchCommand(command, undefined)
-  }
-
-  return (
-    <ButtonGroup>
-      <Button size="icon" variant="outline" disabled={!canUndo} onClick={() => handleClick(UNDO_COMMAND)}>
-        <UndoIcon />
-      </Button>
-      <Button size="icon" variant="outline" disabled={!canRedo} onClick={() => handleClick(REDO_COMMAND)}>
-        <RedoIcon />
-      </Button>
-    </ButtonGroup>
-  )
-}
 
 const TextFormatControls: FC<{
   editor: LexicalEditor
@@ -110,11 +83,9 @@ const TextAlignControls: FC<{ editor: LexicalEditor; format: ElementFormatType }
   )
 }
 
-export const Toolbar = () => {
+export const Toolbar: FC<PropsWithChildren> = ({ children }) => {
   const [editor] = useLexicalComposerContext()
   const toolbarRef = useRef<HTMLDivElement>(null)
-  const [canUndo, setCanUndo] = useState(false)
-  const [canRedo, setCanRedo] = useState(false)
   const [isBold, setIsBold] = useState(false)
   const [isItalic, setIsItalic] = useState(false)
   const [isUnderline, setIsUnderline] = useState(false)
@@ -158,28 +129,12 @@ export const Toolbar = () => {
         },
         COMMAND_PRIORITY_LOW,
       ),
-      editor.registerCommand(
-        CAN_UNDO_COMMAND,
-        (payload) => {
-          setCanUndo(payload)
-          return false
-        },
-        COMMAND_PRIORITY_LOW,
-      ),
-      editor.registerCommand(
-        CAN_REDO_COMMAND,
-        (payload) => {
-          setCanRedo(payload)
-          return false
-        },
-        COMMAND_PRIORITY_LOW,
-      ),
     )
   }, [editor, updateToolbar])
 
   return (
-    <div className="p-1 flex items-center gap-2" ref={toolbarRef}>
-      <HistoryControls editor={editor} canUndo={canUndo} canRedo={canRedo} />
+    <div className="p-1 flex items-center gap-2 overflow-x-auto" ref={toolbarRef}>
+      {children}
       <TextFormatControls
         editor={editor}
         isBold={isBold}
