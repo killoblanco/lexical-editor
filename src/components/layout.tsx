@@ -6,7 +6,7 @@ export const PageLayout = () => {
   return (
     <SidebarProvider>
       <AppSidebar />
-      <main className="w-full p-4">
+      <main className="w-full p-4 max-w-5xl mx-auto min-h-screen py-16 space-y-8">
         <Outlet />
       </main>
     </SidebarProvider>
