@@ -1,36 +1,66 @@
+"use client"
+
+import { cn } from "@/lib/utils"
 import { type InitialConfigType, LexicalComposer } from "@lexical/react/LexicalComposer"
 import { ContentEditable } from "@lexical/react/LexicalContentEditable"
 import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary"
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin"
 import type { FC, PropsWithChildren } from "react"
 
+const EditorContainer: FC<PropsWithChildren> = ({ children }) => {
+  return (
+    <div className="relative border overflow-hidden rounded-lg focus-within:ring-2 focus-within:ring-ring">
+      {children}
+    </div>
+  )
+}
+
 type Props = Partial<InitialConfigType> & {
   placeholder?: string
+  classNames?: {
+    placeholder?: string
+  }
 }
 export const Wysiwyg: FC<PropsWithChildren<Props>> = ({
   children,
   placeholder = "Enter some text...",
   namespace = "WysiwygEditor",
-  theme = {},
+  theme = {
+    text: {
+      bold: "font-bold",
+      italic: "italic",
+      underline: "underline",
+      strikethrough: "line-through",
+      underlineStrikethrough: "[text-decoration-line:underline_line-through]",
+    },
+  },
   onError = console.error,
+  classNames,
 }) => {
   return (
     <LexicalComposer initialConfig={{ namespace, theme, onError }}>
-      <div className="relative border overflow-hidden rounded-lg focus-within:ring-2 focus-within:ring-ring">
+      <EditorContainer>
+        {children}
         <RichTextPlugin
           contentEditable={
             <ContentEditable
-              className="relative p-4 rounded-lg"
+              className="relative p-4 rounded-lg outline-none"
               aria-placeholder={placeholder}
               placeholder={
-                <div className="absolute top-4 left-4 text-muted-foreground pointer-events-none">{placeholder}</div>
+                <div
+                  className={cn(
+                    "absolute top-4 left-4 text-muted-foreground pointer-events-none select-none",
+                    classNames?.placeholder,
+                  )}
+                >
+                  {placeholder}
+                </div>
               }
             />
           }
           ErrorBoundary={LexicalErrorBoundary}
         />
-      </div>
-      {children}
+      </EditorContainer>
     </LexicalComposer>
   )
 }
