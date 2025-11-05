@@ -1,0 +1,32 @@
+import { ChevronRightIcon } from "lucide-react"
+import { Link } from "react-router"
+import { Button } from "@/components/ui/button"
+
+export const IntroductionPage = () => {
+  return (
+    <>
+      <div className="max-w-2xl">
+        <p className="leading-7 not-first:mt-6">
+          <strong>Lexical Editor</strong> is a set of customizable, high-quality components built for content edition,
+          making it easy to design rich text experiences, document editors, content management systems, and more,
+          quickly and beautifully.
+        </p>
+        <p className="leading-7 not-first:mt-6">
+          This project is a work in progress, and I'm continuously improving and expanding the collection. I'd love to
+          hear your feedback or see your contributions as it evolves!
+        </p>
+        <p className="leading-7 not-first:mt-6">
+          <strong>Lexical Editor</strong> is open source. Check out the code and contribute on GitHub.
+        </p>
+      </div>
+      <div className="max-w-2xl flex justify-end">
+        <Button variant="outline" size="sm" asChild={true}>
+          <Link to="/installation">
+            <span>Installation</span>
+            <ChevronRightIcon />
+          </Link>
+        </Button>
+      </div>
+    </>
+  )
+}
