@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "biome check src/ worker/ && shadcn build && tsc -b && vite build",
+    "build": "biome check src/ worker/ --write && shadcn build && tsc -b && vite build",
     "lint": "biome check src/ worker/",
     "preview": "pnpm run build && vite preview",
     "deploy": "pnpm run build && wrangler deploy",
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@lexical/react": "0.38.2",
+    "@lexical/utils": "0.38.2",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-separator": "^1.1.8",
     "@radix-ui/react-slot": "^1.2.4",
