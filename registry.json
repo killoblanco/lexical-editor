@@ -12,11 +12,15 @@
       "registryDependencies": ["button", "button-group"],
       "files": [
         {
-          "path": "src/components/lexical/lexical.tsx",
+          "path": "src/components/lexical/editor.tsx",
           "type": "registry:component"
         },
         {
-          "path": "src/components/lexical/plugins/toolbar.tsx",
+          "path": "src/components/lexical/toolbar/toolbar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/lexical/toolbar/history-ctrl.tsx",
           "type": "registry:component"
         }
       ]
