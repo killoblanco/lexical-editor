@@ -25,7 +25,7 @@ export const AppSidebar = () => {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild={true}>
-                  <Link to="/">Landing Page</Link>
+                  <Link to="/">Home</Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
