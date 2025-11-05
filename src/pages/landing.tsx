@@ -7,7 +7,11 @@ import { Toolbar } from "@/components/lexical/toolbars"
 import { Button } from "@/components/ui/button"
 
 const CODE_SNIPPET = `import { LexicalEditor } from "@/components/lexical/editor"
-import { HistoryCtrl, TextAlignCtrl, TextFormatCtrl } from "@/components/lexical/controls"
+import {
+  HistoryCtrl,
+  TextAlignCtrl,
+  TextFormatCtrl
+} from "@/components/lexical/controls"
 import { Toolbar } from "@/components/lexical/toolbars"
 
 function EditorBasic() {
