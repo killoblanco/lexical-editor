@@ -1,26 +1,22 @@
 import { ChevronRightIcon, GithubIcon } from "lucide-react"
 import { Link } from "react-router"
 import { CodeBlock } from "@/components/app/code-block"
+import { HistoryCtrl, TextAlignCtrl, TextFormatCtrl } from "@/components/lexical/controls"
 import { LexicalEditor } from "@/components/lexical/editor"
-import { HistoryControls } from "@/components/lexical/toolbar/history-ctrl"
-import { TextAlignControls } from "@/components/lexical/toolbar/text-align-ctrl"
-import { TextFormatControls } from "@/components/lexical/toolbar/text-format-ctrl"
-import { Toolbar } from "@/components/lexical/toolbar/toolbar"
+import { Toolbar } from "@/components/lexical/toolbars"
 import { Button } from "@/components/ui/button"
 
 const CODE_SNIPPET = `import { LexicalEditor } from "@/components/lexical/editor"
-import { HistoryControls } from "@/components/lexical/toolbar/history-ctrl"
-import { TextAlignControls } from "@/components/lexical/toolbar/text-align-ctrl"
-import { TextFormatControls } from "@/components/lexical/toolbar/text-format-ctrl"
-import { Toolbar } from "@/components/lexical/toolbar/toolbar"
+import { HistoryCtrl, TextAlignCtrl, TextFormatCtrl } from "@/components/lexical/controls"
+import { Toolbar } from "@/components/lexical/toolbars"
 
 function EditorBasic() {
   return (
-    <LexicalEditor>
+    <LexicalEditor classNames={{ placeholder: "top-15" }}>
       <Toolbar>
-        <HistoryControls />
-        <TextFormatControls />
-        <TextAlignControls />
+        <HistoryCtrl />
+        <TextFormatCtrl />
+        <TextAlignCtrl />
       </Toolbar>
     </LexicalEditor>
   )
@@ -50,9 +46,9 @@ export const LandingPage = () => {
       </div>
       <LexicalEditor classNames={{ placeholder: "top-15" }}>
         <Toolbar>
-          <HistoryControls />
-          <TextFormatControls />
-          <TextAlignControls />
+          <HistoryCtrl />
+          <TextFormatCtrl />
+          <TextAlignCtrl />
         </Toolbar>
       </LexicalEditor>
       <CodeBlock code={CODE_SNIPPET} lang="tsx" />
