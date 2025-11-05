@@ -4,16 +4,18 @@ import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary"
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin"
 import type { FC, PropsWithChildren } from "react"
 
-type Props = InitialConfigType & {
+type Props = Partial<InitialConfigType> & {
   placeholder?: string
 }
 export const Wysiwyg: FC<PropsWithChildren<Props>> = ({
   children,
   placeholder = "Enter some text...",
-  ...initialConfig
+  namespace = "WysiwygEditor",
+  theme = {},
+  onError = console.error,
 }) => {
   return (
-    <LexicalComposer initialConfig={initialConfig}>
+    <LexicalComposer initialConfig={{ namespace, theme, onError }}>
       <div className="relative border overflow-hidden rounded-lg focus-within:ring-2 focus-within:ring-ring">
         <RichTextPlugin
           contentEditable={
