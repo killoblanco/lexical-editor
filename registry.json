@@ -12,23 +12,15 @@
       "registryDependencies": ["button", "button-group", "select"],
       "files": [
         {
+          "path": "src/components/lexical/controls.tsx",
+          "type": "registry:component"
+        },
+        {
           "path": "src/components/lexical/editor.tsx",
           "type": "registry:component"
         },
         {
-          "path": "src/components/lexical/toolbar/toolbar.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/lexical/toolbar/history-ctrl.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/lexical/toolbar/text-align-ctrl.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/lexical/toolbar/text-format-ctrl.tsx",
+          "path": "src/components/lexical/toolbars.tsx",
           "type": "registry:component"
         }
       ]
