@@ -15,8 +15,10 @@ export const AppSidebar = () => {
   return (
     <Sidebar className="border-dashed">
       <SidebarHeader className="flex flex-row items-center gap-2 p-6">
-        <img src="/kevin.svg" alt="Logo" className="size-6" />
-        <h1 className="scroll-m-20 text-xl font-semibold tracking-tight">Text Editor</h1>
+        <a href="//kamilo.dev">
+          <img src="/avatar.webp" alt="Logo" className="size-6" />
+        </a>
+        <h1 className="scroll-m-20 text-xl font-semibold tracking-tight">Lexical Editor</h1>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup className="p-4">
