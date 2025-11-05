@@ -23,12 +23,10 @@ export const LandingPage = () => {
           <span>Star on GitHub</span>
         </Button>
       </div>
-      <div className="mt-12">
         <LexicalEditor classNames={{ placeholder: "top-15" }}>
           <Toolbar />
           <HistoryPlugin />
         </LexicalEditor>
-      </div>
       <div className="flex justify-end">
         <Button variant="outline" size="sm" asChild={true}>
           <Link to="/introduction">
