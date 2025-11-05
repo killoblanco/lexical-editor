@@ -11,6 +11,13 @@ import {
   SidebarMenuItem,
 } from "./ui/sidebar"
 
+const content = {
+  "Get Started": [
+    { label: "Home", to: "/" },
+    { label: "Introduction", to: "/introduction" },
+  ],
+}
+
 export const AppSidebar = () => {
   return (
     <Sidebar className="border-dashed">
@@ -22,16 +29,22 @@ export const AppSidebar = () => {
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup className="p-4">
-          <SidebarGroupLabel className="pb-4">Get Started</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild={true}>
-                  <Link to="/">Home</Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
-          </SidebarGroupContent>
+          {Object.keys(content).map((groupTitle) => (
+            <SidebarGroup key={groupTitle} className="mb-6">
+              <SidebarGroupLabel className="pb-4">{groupTitle}</SidebarGroupLabel>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  {content[groupTitle as keyof typeof content].map((item) => (
+                    <SidebarMenuItem key={item.label}>
+                      <SidebarMenuButton asChild={true}>
+                        <Link to={item.to}>{item.label}</Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  ))}
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          ))}
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>
