@@ -9,7 +9,7 @@
       "title": "Lexical Editor",
       "description": "A rich text editor component powered by Lexical.",
       "dependencies": ["lexical", "@lexical/react", "@lexical/utils"],
-      "registryDependencies": ["button", "button-group"],
+      "registryDependencies": ["button", "button-group", "select"],
       "files": [
         {
           "path": "src/components/lexical/editor.tsx",
@@ -25,6 +25,10 @@
         },
         {
           "path": "src/components/lexical/toolbar/text-align-ctrl.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/lexical/toolbar/text-format-ctrl.tsx",
           "type": "registry:component"
         }
       ]
