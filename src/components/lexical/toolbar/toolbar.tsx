@@ -9,56 +9,13 @@ import {
   COMMAND_PRIORITY_LOW,
   type ElementFormatType,
   FORMAT_ELEMENT_COMMAND,
-  FORMAT_TEXT_COMMAND,
   type LexicalEditor,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
-import {
-  AlignCenterIcon,
-  AlignJustifyIcon,
-  AlignLeftIcon,
-  AlignRightIcon,
-  BoldIcon,
-  ItalicIcon,
-  StrikethroughIcon,
-  UnderlineIcon,
-} from "lucide-react"
+import { AlignCenterIcon, AlignJustifyIcon, AlignLeftIcon, AlignRightIcon } from "lucide-react"
 import { type FC, type PropsWithChildren, useCallback, useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ButtonGroup } from "@/components/ui/button-group"
-
-const TextFormatControls: FC<{
-  editor: LexicalEditor
-  isBold: boolean
-  isItalic: boolean
-  isUnderline: boolean
-  isStrikethrough: boolean
-}> = ({ editor, isBold, isItalic, isUnderline, isStrikethrough }) => {
-  const handleClick = (format: "bold" | "italic" | "underline" | "strikethrough") => {
-    editor.dispatchCommand(FORMAT_TEXT_COMMAND, format)
-  }
-
-  return (
-    <ButtonGroup>
-      <Button size="icon" variant={isBold ? "default" : "outline"} onClick={() => handleClick("bold")}>
-        <BoldIcon />
-      </Button>
-      <Button size="icon" variant={isItalic ? "default" : "outline"} onClick={() => handleClick("italic")}>
-        <ItalicIcon />
-      </Button>
-      <Button size="icon" variant={isUnderline ? "default" : "outline"} onClick={() => handleClick("underline")}>
-        <UnderlineIcon />
-      </Button>
-      <Button
-        size="icon"
-        variant={isStrikethrough ? "default" : "outline"}
-        onClick={() => handleClick("strikethrough")}
-      >
-        <StrikethroughIcon />
-      </Button>
-    </ButtonGroup>
-  )
-}
 
 const TextAlignControls: FC<{ editor: LexicalEditor; format: ElementFormatType }> = ({ editor, format }) => {
   const handleClick = (alignment: ElementFormatType) => () => {
@@ -86,10 +43,6 @@ const TextAlignControls: FC<{ editor: LexicalEditor; format: ElementFormatType }
 export const Toolbar: FC<PropsWithChildren> = ({ children }) => {
   const [editor] = useLexicalComposerContext()
   const toolbarRef = useRef<HTMLDivElement>(null)
-  const [isBold, setIsBold] = useState(false)
-  const [isItalic, setIsItalic] = useState(false)
-  const [isUnderline, setIsUnderline] = useState(false)
-  const [isStrikethrough, setIsStrikethrough] = useState(false)
   const [elementFormat, setElementFormat] = useState<ElementFormatType>("")
 
   const updateToolbar = useCallback(() => {
@@ -102,12 +55,6 @@ export const Toolbar: FC<PropsWithChildren> = ({ children }) => {
       if ($isElementNode(element)) {
         setElementFormat(element.getFormatType())
       }
-
-      // Update text format
-      setIsBold(selection.hasFormat("bold"))
-      setIsItalic(selection.hasFormat("italic"))
-      setIsUnderline(selection.hasFormat("underline"))
-      setIsStrikethrough(selection.hasFormat("strikethrough"))
     }
   }, [])
 
@@ -135,13 +82,6 @@ export const Toolbar: FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className="p-1 flex items-center gap-2 overflow-x-auto" ref={toolbarRef}>
       {children}
-      <TextFormatControls
-        editor={editor}
-        isBold={isBold}
-        isItalic={isItalic}
-        isUnderline={isUnderline}
-        isStrikethrough={isStrikethrough}
-      />
       <TextAlignControls editor={editor} format={elementFormat} />
     </div>
   )
