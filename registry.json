@@ -22,6 +22,10 @@
         {
           "path": "src/components/lexical/toolbar/history-ctrl.tsx",
           "type": "registry:component"
+        },
+        {
+          "path": "src/components/lexical/toolbar/text-align-ctrl.tsx",
+          "type": "registry:component"
         }
       ]
     }
