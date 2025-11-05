@@ -1,11 +1,11 @@
 "use client"
 
-import { cn } from "@/lib/utils"
 import { type InitialConfigType, LexicalComposer } from "@lexical/react/LexicalComposer"
 import { ContentEditable } from "@lexical/react/LexicalContentEditable"
 import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary"
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin"
 import type { FC, PropsWithChildren } from "react"
+import { cn } from "@/lib/utils"
 
 const EditorContainer: FC<PropsWithChildren> = ({ children }) => {
   return (

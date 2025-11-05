@@ -1,7 +1,5 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { ButtonGroup } from "@/components/ui/button-group"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { mergeRegister } from "@lexical/utils"
 import {
@@ -11,13 +9,13 @@ import {
   CAN_REDO_COMMAND,
   CAN_UNDO_COMMAND,
   COMMAND_PRIORITY_LOW,
+  type ElementFormatType,
   FORMAT_ELEMENT_COMMAND,
   FORMAT_TEXT_COMMAND,
+  type LexicalEditor,
   REDO_COMMAND,
   SELECTION_CHANGE_COMMAND,
   UNDO_COMMAND,
-  type ElementFormatType,
-  type LexicalEditor,
 } from "lexical"
 import {
   AlignCenterIcon,
@@ -31,7 +29,9 @@ import {
   UnderlineIcon,
   UndoIcon,
 } from "lucide-react"
-import { useCallback, useEffect, useRef, useState, type FC } from "react"
+import { type FC, useCallback, useEffect, useRef, useState } from "react"
+import { Button } from "@/components/ui/button"
+import { ButtonGroup } from "@/components/ui/button-group"
 
 const HistoryControls: FC<{ editor: LexicalEditor; canUndo: boolean; canRedo: boolean }> = ({
   editor,
