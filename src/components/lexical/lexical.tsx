@@ -21,10 +21,10 @@ type Props = Partial<InitialConfigType> & {
     placeholder?: string
   }
 }
-export const Wysiwyg: FC<PropsWithChildren<Props>> = ({
+export const LexicalEditor: FC<PropsWithChildren<Props>> = ({
   children,
   placeholder = "Enter some text...",
-  namespace = "WysiwygEditor",
+  namespace = "LexicalEditor",
   theme = {
     text: {
       bold: "font-bold",
