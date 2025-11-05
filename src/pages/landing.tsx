@@ -2,6 +2,7 @@ import { ChevronRightIcon, GithubIcon } from "lucide-react"
 import { Link } from "react-router"
 import { LexicalEditor } from "@/components/lexical/editor"
 import { HistoryControls } from "@/components/lexical/toolbar/history-ctrl"
+import { TextFormatControls } from "@/components/lexical/toolbar/text-format-ctrl"
 import { Toolbar } from "@/components/lexical/toolbar/toolbar"
 import { Button } from "@/components/ui/button"
 
@@ -26,6 +27,7 @@ export const LandingPage = () => {
       <LexicalEditor classNames={{ placeholder: "top-15" }}>
         <Toolbar>
           <HistoryControls />
+          <TextFormatControls />
         </Toolbar>
       </LexicalEditor>
       <div className="flex justify-end">
