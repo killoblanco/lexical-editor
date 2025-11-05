@@ -1,4 +1,4 @@
-import { LexicalComposer, type InitialConfigType } from "@lexical/react/LexicalComposer"
+import { type InitialConfigType, LexicalComposer } from "@lexical/react/LexicalComposer"
 import { ContentEditable } from "@lexical/react/LexicalContentEditable"
 import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary"
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin"
