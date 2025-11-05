@@ -29,7 +29,7 @@ export const CodeBlock: FC<Props> = ({ code, lang = "typescript", theme = "githu
   }
 
   return (
-    <div className="border rounded-lg overflow-hidden p-2">
+    <div className="border rounded-lg overflow-auto p-2">
       {/** biome-ignore lint/security/noDangerouslySetInnerHtml: required for shiki */}
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
