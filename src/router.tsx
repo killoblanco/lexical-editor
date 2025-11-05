@@ -1,6 +1,6 @@
-import { PageLayout } from "@/components/layout";
-import { LandingPage } from "@/pages/landing";
-import { BrowserRouter, Route, Routes } from "react-router";
+import { BrowserRouter, Route, Routes } from "react-router"
+import { PageLayout } from "@/components/layout"
+import { LandingPage } from "@/pages/landing"
 
 export const Router = () => (
   <BrowserRouter>
