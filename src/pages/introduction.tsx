@@ -16,7 +16,25 @@ export const IntroductionPage = () => {
           hear your feedback or see your contributions as it evolves!
         </p>
         <p className="leading-7 not-first:mt-6">
-          <strong>Lexical Editor</strong> is open source. Check out the code and contribute on GitHub.
+          <strong>Lexical Editor</strong> is open source. Check out the code and contribute on&nbsp;
+          <a
+            href="https://github.com/killoblanco/lexical-editor"
+            target="_github"
+            className="font-medium underline underline-offset-2"
+          >
+            GitHub
+          </a>
+        </p>
+        <p className="leading-7 not-first:mt-6">
+          Special thanks to&nbsp;
+          <a href="https://github.com/ibelick" target="_ibelik" className="font-medium underline underline-offset-2">
+            Julien Thibeaut (@ibelick)
+          </a>
+          &nbsp;for providing me with the idea for the style and introduction used in this documentation from his
+          project&nbsp;
+          <a href="https://www.prompt-kit.com" target="_ibelik" className="font-medium underline underline-offset-2">
+            prompt-kit
+          </a>
         </p>
       </div>
       <div className="max-w-2xl flex justify-end">
