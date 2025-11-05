@@ -1,4 +1,4 @@
-import { Link } from "react-router"
+import { Link, useLocation } from "react-router"
 import {
   Sidebar,
   SidebarContent,
@@ -15,10 +15,13 @@ const content = {
   "Get Started": [
     { label: "Home", to: "/" },
     { label: "Introduction", to: "/introduction" },
+    { label: "Installation", to: "/installation" },
   ],
 }
 
 export const AppSidebar = () => {
+  const { pathname } = useLocation()
+
   return (
     <Sidebar className="border-dashed">
       <SidebarHeader className="flex flex-row items-center gap-2 p-6">
@@ -36,7 +39,7 @@ export const AppSidebar = () => {
                 <SidebarMenu>
                   {content[groupTitle as keyof typeof content].map((item) => (
                     <SidebarMenuItem key={item.label}>
-                      <SidebarMenuButton asChild={true}>
+                      <SidebarMenuButton asChild={true} isActive={pathname === item.to}>
                         <Link to={item.to}>{item.label}</Link>
                       </SidebarMenuButton>
                     </SidebarMenuItem>
