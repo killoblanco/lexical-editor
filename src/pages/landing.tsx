@@ -1,6 +1,7 @@
-import { ChevronRightIcon, GithubIcon } from "lucide-react"
+import { GithubIcon } from "lucide-react"
 import { Link } from "react-router"
 import { CodeBlock } from "@/components/app/code-block"
+import { NavButtons } from "@/components/app/nav-btns"
 import { HistoryCtrl, TextAlignCtrl, TextFormatCtrl } from "@/components/lexical/controls"
 import { LexicalEditor } from "@/components/lexical/editor"
 import { Toolbar } from "@/components/lexical/toolbars"
@@ -56,14 +57,7 @@ export const LandingPage = () => {
         </Toolbar>
       </LexicalEditor>
       <CodeBlock code={CODE_SNIPPET} lang="tsx" />
-      <div className="flex justify-end">
-        <Button variant="outline" size="sm" asChild={true}>
-          <Link to="/introduction">
-            <span>Introduction</span>
-            <ChevronRightIcon />
-          </Link>
-        </Button>
-      </div>
+      <NavButtons next={{ label: "Introduction", to: "/introduction" }} />
     </>
   )
 }
