@@ -18,13 +18,13 @@ const content = {
     { label: "Installation", to: "/installation" },
   ],
   "Components ": [
-    { label: "Lexical Editor", to: "/installation" },
-    { label: "Toolbar", to: "/installation" },
+    { label: "Lexical Editor", to: "/lexical-editor" },
+    { label: "Toolbar", to: "/toolbar" },
   ],
   "Editor Controls": [
-    { label: "History Control", to: "/installation" },
-    { label: "Text Format Control", to: "/installation" },
-    { label: "Text Align Control", to: "/installation" },
+    { label: "History Control", to: "/history-ctrl" },
+    { label: "Text Format Control", to: "/text-format-ctrl" },
+    { label: "Text Align Control", to: "/text-align-ctrl" },
   ],
   // "Parsers ": [
   //   { label: "Markdown Parser", to: "/installation" },
