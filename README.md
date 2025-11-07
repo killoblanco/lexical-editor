@@ -1,15 +1,13 @@
 # Lexical Editor
 
-**Core building blocks for Rich Text Editors with Lexical JS**
-
+**Core building blocks for Rich Text Editors with Lexical JS**<br />
 High-quality, accessible, and customizable components for Rich Text Editors with Lexical JS
 
 ## Installation
 
 ### Install shadcn/ui
 
-First, you will need to install and configure [shadcn/ui](https://ui.shadcn.com) in your project.
-
+First, you will need to install and configure [shadcn/ui](https://ui.shadcn.com) in your project.<br />
 Follow the installation guide in the shadcn/ui documentation.
 
 ### Install lexical editor block
