@@ -4,8 +4,10 @@ import { type InitialConfigType, LexicalComposer } from "@lexical/react/LexicalC
 import { ContentEditable } from "@lexical/react/LexicalContentEditable"
 import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary"
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin"
+import { HeadingNode } from "@lexical/rich-text"
 import type { FC, PropsWithChildren } from "react"
 import { cn } from "@/lib/utils"
+import { editorTheme } from "./theme"
 
 const EditorContainer: FC<PropsWithChildren> = ({ children }) => {
   return (
@@ -25,20 +27,21 @@ export const LexicalEditor: FC<PropsWithChildren<Props>> = ({
   children,
   placeholder = "Enter some text...",
   namespace = "LexicalEditor",
-  theme = {
-    text: {
-      bold: "font-bold",
-      italic: "italic",
-      underline: "underline",
-      strikethrough: "line-through",
-      underlineStrikethrough: "[text-decoration-line:underline_line-through]",
-    },
-  },
+  theme = editorTheme,
   onError = console.error,
   classNames,
+  ...initialConfig
 }) => {
   return (
-    <LexicalComposer initialConfig={{ namespace, theme, onError }}>
+    <LexicalComposer
+      initialConfig={{
+        namespace,
+        theme,
+        onError,
+        ...initialConfig,
+        nodes: [HeadingNode],
+      }}
+    >
       <EditorContainer>
         {children}
         <RichTextPlugin
