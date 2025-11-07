@@ -26,10 +26,10 @@ const content = {
     { label: "Text Format Control", to: "/installation" },
     { label: "Text Align Control", to: "/installation" },
   ],
-  "Parsers ": [
-    { label: "Markdown Parser", to: "/installation" },
-    { label: "HTML Parser", to: "/installation" },
-  ],
+  // "Parsers ": [
+  //   { label: "Markdown Parser", to: "/installation" },
+  //   { label: "HTML Parser", to: "/installation" },
+  // ],
 }
 
 export const AppSidebar = () => {
