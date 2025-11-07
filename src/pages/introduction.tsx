@@ -1,6 +1,4 @@
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
-import { Link } from "react-router"
-import { Button } from "@/components/ui/button"
+import { NavButtons } from "@/components/app/nav-btns"
 
 export const IntroductionPage = () => {
   return (
@@ -37,20 +35,7 @@ export const IntroductionPage = () => {
           </a>
         </p>
       </div>
-      <div className="max-w-2xl flex justify-between">
-        <Button variant="outline" size="sm" asChild={true}>
-          <Link to="/">
-            <ChevronLeftIcon />
-            <span>Home</span>
-          </Link>
-        </Button>
-        <Button variant="outline" size="sm" asChild={true}>
-          <Link to="/installation">
-            <span>Installation</span>
-            <ChevronRightIcon />
-          </Link>
-        </Button>
-      </div>
+      <NavButtons prev={{ label: "Home", to: "/" }} next={{ label: "Installation", to: "/installation" }} />
     </>
   )
 }
