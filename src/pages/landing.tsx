@@ -48,7 +48,7 @@ export const LandingPage = () => {
           </a>
         </Button>
       </div>
-      <LexicalEditor classNames={{ placeholder: "top-15" }}>
+      <LexicalEditor classNames={{ placeholder: "top-20" }}>
         <Toolbar>
           <HistoryCtrl />
           <TextFormatCtrl />
