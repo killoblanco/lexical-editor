@@ -42,16 +42,23 @@ export const CodeBlock: FC<Props> = ({ code, lang = "typescript", theme = "githu
   }
 
   return (
-    <div className="border rounded-lg overflow-auto p-2 text-xs group relative">
+    <div className="border rounded-lg overflow-auto p-2 text-sm group relative">
       <div className="hidden group-hover:block absolute top-2 right-2">
         <Button
           variant="ghost"
-          size="icon-sm"
+          size={wasCopied ? "sm" : "icon-sm"}
           className="text-muted-foreground cursor-pointer"
           onClick={copyToClipboard}
           disabled={wasCopied}
         >
-          {wasCopied ? <CheckIcon /> : <CopyIcon />}
+          {wasCopied ? (
+            <>
+              <CheckIcon />
+              <span>Copied!</span>
+            </>
+          ) : (
+            <CopyIcon />
+          )}
         </Button>
       </div>
       {/** biome-ignore lint/security/noDangerouslySetInnerHtml: required for shiki */}
