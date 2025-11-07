@@ -37,7 +37,7 @@ export const LandingPage = () => {
           High-quality, accessible, and customizable components for Rich Text Editors with Lexical JS
         </h3>
       </div>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 mb-">
         <Button asChild={true}>
           <Link to="/introduction">Get Started</Link>
         </Button>
